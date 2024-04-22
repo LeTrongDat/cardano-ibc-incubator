@@ -1,0 +1,20 @@
+name: Run Start Script
+
+on:
+  push:
+    branches:
+      - main  # Ensures the workflow runs only on pushes to the main branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # Specifies the runner environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checks out your repository under $GITHUB_WORKSPACE
+
+      - name: Run start.sh
+        run: |
+          chmod +x start.sh  # Ensure the script is executable
+          ./start.sh
+
