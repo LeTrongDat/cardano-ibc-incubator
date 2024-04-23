@@ -43,7 +43,7 @@ cd ../chains
 
 cd ../
 cp .env.example .env
-${AIKEN} build --trace-level verbose
+${AIKEN} build
 ${DENO} run -A ./aiken-to-lucid/src/main.ts
 rm deployments/handler.json
 
